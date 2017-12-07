@@ -10,17 +10,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
     <script type="text/babel">
       class Starwars extends React.Component {
+        constructor(prop) {
+          super(prop);
+          this.state = { age : 60 }
+        }
         render() {
           return (
             <div>
-              <h1>My favorite StarWars character is {this.props.name}</h1>
+              <h1>My favorite StarWars character is {this.props.firstname} {this.props.lastname}</h1>
+              <h3>Age : {this.state.age}</h3>
             </div>
           );
         }
       }
 
       ReactDOM.render(
-        <Starwars name="Luke"/>, document.getElementById('app')
+        <Starwars firstname="Luke" lastname="Skydiving"/>, document.getElementById('app')
       );
     </script>
   </body>
